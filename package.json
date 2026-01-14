@@ -33,4 +33,7 @@
     "@types/morgan": "^1.9.4",
     "@types/node": "^20.0.0"
   }
+  "scripts": {
+  "init-db": "node scripts/init-db.js"
+  }
 }
