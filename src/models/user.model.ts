@@ -52,12 +52,10 @@ userSchema.pre('save', async function(next) {
   }
 });
 
-// Method to compare passwords
 userSchema.methods.comparePassword = async function(candidatePassword: string): Promise<boolean> {
   return await bcrypt.compare(candidatePassword, this.password);
 };
 
-// Transform output
 userSchema.set('toJSON', {
   transform: (_, ret) => {
     delete ret.password;
